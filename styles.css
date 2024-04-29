@@ -29,6 +29,8 @@ nav ul li a {
 
 main {
     padding: 20px;
+    max-width: 1000px; /* Largura máxima para telas grandes */
+    margin: 0 auto; /* Centraliza o conteúdo */
 }
 
 footer {
@@ -39,4 +41,19 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* Media query para telas menores */
+@media screen and (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+}
+
+/* Media query para telas muito pequenas, como smartphones */
+@media screen and (max-width: 480px) {
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
 }
