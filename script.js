@@ -18,21 +18,16 @@ const translations = {
     "fr": {
         "searchPlaceholder": "Rechercher des téléchargements...",
         "searchButton": "Rechercher"
+    },
+    "pt-BR": {
+        "searchPlaceholder": "Buscar downloads...",
+        "searchButton": "Buscar"
     }
 };
 
 document.addEventListener('DOMContentLoaded', function() {
-    const languageSelect = document.getElementById('languageSelect');
-    const searchBtn = document.getElementById('searchBtn');
-
-    languageSelect.addEventListener('change', function() {
-        const selectedLanguage = languageSelect.value;
-        translate(selectedLanguage);
-    });
-
-    function translate(language) {
-        const translation = translations[language];
-        document.getElementById('search').setAttribute('placeholder', translation.searchPlaceholder);
-        document.getElementById('searchBtn').innerText = translation.searchButton;
-    }
+    const language = navigator.language.split('-')[0]; // Obter apenas a parte do idioma (ex: "en" de "en-US")
+    const translation = translations[language] || translations['en']; // Usar inglês como padrão se não houver tradução disponível
+    document.getElementById('search').setAttribute('placeholder', translation.searchPlaceholder);
+    document.getElementById('searchBtn').innerText = translation.searchButton;
 });
