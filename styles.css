@@ -1,4 +1,11 @@
-/* Estilo para o cabeçalho */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
 header {
     background-color: #333;
     color: #fff;
@@ -9,7 +16,6 @@ header {
     align-items: center;
 }
 
-/* Estilo para o menu de navegação */
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -31,37 +37,52 @@ nav ul li a:hover {
     color: #bbb;
 }
 
-/* Estilo para o seletor de idioma */
-#languageSelect {
-    padding: 5px;
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
     border-radius: 4px;
+}
+
+.post {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.post h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.post .date {
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.post p {
+    line-height: 1.6;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 10px 20px;
     background-color: #555;
     color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-/* Estilo para o formulário de pesquisa */
-form {
-    display: flex;
-    align-items: center;
-}
-
-input[type="text"] {
-    padding: 8px;
-    border: none;
+    text-decoration: none;
     border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
-button {
-    padding: 8px 16px;
-    background-color: #555;
+.download-btn:hover {
+    background-color: #333;
+}
+
+footer {
+    background-color: #333;
     color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #777;
+    padding: 10px 20px;
+    text-align: center;
 }
