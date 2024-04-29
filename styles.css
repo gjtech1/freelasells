@@ -1,19 +1,21 @@
 body {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #f9f9f9; /* Fundo cinza claro */
+    color: #333; /* Texto preto */
 }
 
 header {
-    background-color: #333;
-    color: white;
+    background-color: #333; /* Fundo cinza escuro para o cabeçalho */
+    color: #fff; /* Texto branco */
     padding: 10px 20px;
-    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 nav ul {
     list-style-type: none;
+    margin: 0;
     padding: 0;
 }
 
@@ -23,37 +25,68 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #fff; /* Texto branco para os links */
     text-decoration: none;
 }
 
 main {
     padding: 20px;
-    max-width: 1000px; /* Largura máxima para telas grandes */
-    margin: 0 auto; /* Centraliza o conteúdo */
 }
 
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
+    background-color: #333; /* Fundo cinza escuro para o rodapé */
+    color: #fff; /* Texto branco */
+    padding: 10px 20px;
     position: fixed;
     bottom: 0;
     width: 100%;
 }
 
-/* Media query para telas menores */
-@media screen and (max-width: 768px) {
-    main {
-        padding: 10px;
-    }
+/* Estilo para a seção de downloads */
+.downloads {
+    background-color: #fff; /* Fundo branco */
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
-/* Media query para telas muito pequenas, como smartphones */
-@media screen and (max-width: 480px) {
-    nav ul li {
-        display: block;
-        margin-bottom: 10px;
-    }
+.downloads h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.downloads ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.downloads ul li {
+    margin-bottom: 10px;
+}
+
+/* Estilo para o formulário de pesquisa */
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 8px;
+    width: 300px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555; /* Altera a cor de fundo ao passar o mouse */
 }
