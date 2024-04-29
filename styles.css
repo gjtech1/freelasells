@@ -4,9 +4,10 @@ body {
     padding: 0;
     background-color: #f9f9f9;
     color: #333;
-    min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura da janela do navegador */
     display: flex;
-    flex-direction: column; /* Define a direção do layout como coluna para alinhar o rodapé no final da página */
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura da janela do navegador */
+    position: relative; /* Define o corpo como um contexto de posicionamento para o rodapé fixo */
 }
 
 header {
@@ -52,5 +53,8 @@ footer {
     color: #fff;
     padding: 20px;
     text-align: center;
-    margin-top: auto; /* Alinha o rodapé no final da página */
+    position: fixed; /* Fixa o rodapé na parte inferior da janela */
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
