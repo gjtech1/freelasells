@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Uso - Freela Sell's</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <script src="script.js"></script>
+    <style>
+        body {
+            background-image: linear-gradient(to bottom, #6c5ce7 0%, #ffffff 100%);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #6c5ce7;
+            padding: 1em;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        header h1 {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        header h1 span {
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        header h1 span:nth-child(odd) {
+            animation-direction: alternate;
+        }
+
+        .header-icon {
+           height: 40px;
+           position: absolute;
+           left: 1em;
+           top: 50%;
+           transform: translateY(-50%);
+        }
+
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2em;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 2em;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            text-align: justify;
+            line-height: 1.5;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #6c5ce7;
+        }
+
+        footer {
+            background-color: #6c5ce7;
+            padding: 1em;
+            text-align: center;
+            color: #fff;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ccc;
+        }
+
+        .back-to-top-button {
+            background-color: #6c5ce7;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 0 auto 1em auto;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .back-to-top-button:hover {
+            background-color: #4b3f8c;
+        }
+
+        .fade-in-top {
+            animation: fadeInTop 1s ease-in-out both;
+            animation-fill-mode: forwards;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        @keyframes fadeInTop {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./OIG4.png" alt="Ícone" class="header-icon">
+        <h1>
+            <span>Termos de Uso - Freela Sell's</span>
+        </h1>
+    </header>
+    <main>
+        <section class="fade-in-top">
+            <h2>1. Introdução</h2>
+            <p>
+                Estes termos de uso regulam o uso do site Freela Sell's, bem como a relação entre os freelancers e os clientes que utilizam nossa plataforma. Ao utilizar nossos serviços, você concorda em cumprir estes termos.
+            </p>
+            <h2>2. Registro e Conta</h2>
+            <p>
+                Para utilizar nossos serviços, você deve criar uma conta no discord para acessar nosso servidor. É de sua responsabilidade manter a segurança da sua conta e informações de login.
+            </p>
+            <h2>3. Termos de Compra e Venda</h2>
+            <p>
+                Os freelancers são responsáveis por fornecer serviços de acordo com os termos acordados com o cliente e servidor. Os clientes são responsáveis por pagar pelos serviços prestados pelos freelancers de acordo com as negociações acordadas.
+            </p>
+            <h2>4. Reembolsos</h2>
+            <p>
+                Os reembolsos serão considerados somente em casos em que o freelancer não tenha fornecido os serviços acordados ou tenha fornecido serviços de baixa qualidade. Os pedidos de reembolso devem ser feitos dentro de 7 dias após a entrega do serviço.
+            </p>
+            <h2>5. Responsabilidade</h2>
+            <p>
+                O Freela Sell's não é responsável pelos serviços prestados pelos freelancers ou pelos danos causados ​​à propriedade ou pessoas como resultado dos serviços prestados pelos freelancers.
+            </p>
+            <h2>6. Resolução de Conflitos</h2>
+            <p>
+                Todos os conflitos entre freelancers e clientes devem ser resolvidos de forma amigável. Se não for possível resolver o conflito de forma amigável, administradores do Freela Sell's poderão intervir para ajudar a resolver o conflito.
+            </p>
+            </p>
+            <h2>7. Termos do Discord</h2>
+            <p>
+                Ao utilizar nosso serviço, você concorda que aceitou todos os termos de serviço do Discord, uma vez que é necessário estar em nosso servidor prara realizar compras.
+            </p>
+        </section>
+        <a href="index.html" class="back-to-top-button">Voltar para o início</a>
+    </main>
+    <footer>
+        <p>&copy; 2024 Freela Sell's - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var section = document.querySelector('.fade-in-top');
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(50px)';
+
+            setTimeout(function() {
+                section.classList.add('fade-in-top');
+            }, 10);
+        });
+    </script>
+</body>
+</html>
