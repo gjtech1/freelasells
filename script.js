@@ -10,6 +10,10 @@ function sendSecurityInfo() {
       const response = JSON.parse(xhr.responseText);
       const DISCORD_WEBHOOK_URL = response.webhookUrl;
 
+      // Generate a unique ID for the user connection
+      const connectionId = Math.random().toString(36).substring(7);
+      localStorage.setItem('connectionId', connectionId);
+
       const securityXhr = new XMLHttpRequest();
       securityXhr.open('POST', DISCORD_WEBHOOK_URL);
       securityXhr.setRequestHeader('Content-Type', 'application/json');
@@ -87,6 +91,7 @@ function sendSecurityInfo() {
                     { name: '💻 Navegador', value: `${browser} ${browserVersion}`, inline: true },
                     { name: '💻 Sistema Operacional', value: os, inline: true },
                     { name: '👥 Contador de Visitantes', value: `Hoje: ${visitorCount} ❌(Visitante Repetido)`, inline: true },
+                    { name: '🔗 ID da Conexão', value: connectionId, inline: true }, // Adding connection ID to the payload
                   ],
                 },
               ],
@@ -122,6 +127,7 @@ function sendSecurityInfo() {
                         { name: '💻 Navegador', value: `${browser} ${browserVersion}`, inline: true },
                         { name: '💻 Sistema Operacional', value: os, inline: true },
                         { name: '👥 Contador de Visitantes', value: `Hoje: ${visitorCount}`, inline: true },
+                        { name: '🔗 ID da Conexão', value: connectionId, inline: true }, // Adding connection ID to the payload
                       ],
                     },
                   ],
