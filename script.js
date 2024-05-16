@@ -17,10 +17,10 @@ function sendSecurityInfo() {
       securityXhr.onload = function () {
         if (securityXhr.status >= 200 && securityXhr.status < 300) {
           // Requisição bem-sucedida
-          console.log('Mensagem enviada com sucesso para o Discord!');
+          console.log('Mensagem de segurança enviada.');
         } else {
           // Tratar erro
-          console.error('Erro ao enviar mensagem para o Discord:', securityXhr.statusText);
+          console.error('Erro ao enviar mensagem de segurança:', securityXhr.statusText);
         }
       };
 
