@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     <!-- SweetAlert2 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.min.css">
-    <script src="https://hcaptcha.com/1/api.js" async defer>
-    </script>
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="script.js"></script>
     <style>
         body {
@@ -321,8 +321,19 @@
             document.getElementById('submitButton').disabled = false;
         }
 
+        // Adiciona uma função para obter a URL do contato do Glitch
+        async function getContactUrl() {
+          try {
+            const response = await axios.get('https://verdant-auspicious-ziconium.glitch.me/contact-url');
+            return response.data.contactUrl;
+          } catch (error) {
+            console.error(error);
+            return null;
+          }
+        }
+
         // Adiciona uma função para enviar a mensagem para o Discord
-        function sendToDiscord() {
+        async function sendToDiscord() {
             // Desabilita o botão de enviar
             document.getElementById('submitButton').disabled = true;
 
@@ -360,36 +371,46 @@
                 ]
             };
 
-            // Cria a requisição HTTP para o webhook do Discord
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'https://discord.com/api/webhooks/1239280315365720184/GcDxv6nCP_m__9lOAwEzRvlX2kLgBG42hkSuFp_87N4s4OuiuVyAsWS94tN63gYWHz7M', true);
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.send(JSON.stringify(payload));
+            // Obtém a URL do contato do Glitch
+            const contactUrl = await getContactUrl();
+            if (contactUrl) {
+              // Cria a requisição HTTP para o webhook do Discord
+              var xhr = new XMLHttpRequest();
+              xhr.open('POST', contactUrl, true);
+              xhr.setRequestHeader('Content-Type', 'application/json');
+              xhr.send(JSON.stringify(payload));
 
-            // Limpa os campos do formulário
-            document.getElementById('support-form').reset();
+              // Limpa os campos do formulário
+              document.getElementById('support-form').reset();
 
-            // Exibe o overlay após enviar a mensagem
-            var supportOverlay = document.getElementById('supportOverlay');
-            supportOverlay.classList.add('active');
+              // Exibe o overlay após enviar a mensagem
+              var supportOverlay = document.getElementById('supportOverlay');
+              supportOverlay.classList.add('active');
 
-            // Armazena a hora atual no armazenamento local
-            localStorage.setItem('supportOverlayTime', new Date().getTime());
+              // Armazena a hora atual no armazenamento local
+              localStorage.setItem('supportOverlayTime', new Date().getTime());
 
-            // Exibe o popup SweetAlert2
-            Swal.fire({
-                title: 'Mensagem enviada!',
-                text: 'O suporte já recebeu sua mensagem. Enviaremos uma resposta no seu e-mail em breve.',
-                icon: 'success',
-                confirmButtonText: 'OK'
-            }).then(() => {
-                // Esconde o overlay após 10 minutos ou quando o popup for fechado
-                setTimeout(() => {
-                    supportOverlay.classList.remove('active');
-                    document.getElementById('submitButton').disabled = false; // Habilita o botão de enviar novamente
-                    localStorage.removeItem('supportOverlayTime'); // Remove a hora atual do armazenamento local
-                }, 10 * 60 * 1000); // 10 minutos em milissegundos
-            });
+              // Exibe o popup SweetAlert2
+              Swal.fire({
+                  title: 'Mensagem enviada!',
+                  text: 'O suporte já recebeu sua mensagem. Enviaremos uma resposta no seu e-mail em breve.',
+                  icon: 'success',
+                  confirmButtonText: 'OK'
+              }).then(() => {
+                  // Esconde o overlay após 10 minutos ou quando o popup for fechado
+                  setTimeout(() => {
+                      supportOverlay.classList.remove('active');
+                      document.getElementById('submitButton').disabled = false; // Habilita o botão de enviar novamente
+                      localStorage.removeItem('supportOverlayTime'); // Remove a hora atual do armazenamento local
+                  }, 10 * 60 * 1000); // 10 minutos em milissegundos
+              });
+            } else {
+              // Habilita o botão de enviar novamente
+              document.getElementById('submitButton').disabled = false;
+
+              // Exibe um erro no console
+              console.error('Contact URL not found');
+            }
 
             return false; // Previne o formulário de ser enviado normalmente
         }
@@ -417,7 +438,6 @@
             enableSubmitButton();
         });
 
-        
     </script>
 
     <!-- SweetAlert2 JavaScript -->
