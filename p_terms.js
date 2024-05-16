@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add event listener to the view policy button
         viewPolicyButton.addEventListener('click', function() {
-            window.location.href = 'privacidade.html';
+            window.location.href = 'privacidade';
         });
     }
 });
