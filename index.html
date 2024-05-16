@@ -1,47 +1,379 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Seu Nome - Downloads</title>
-<meta name="description" content="Descrição do seu site aqui">
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="script.js"></script>
+    <title>Freela Sell's - Freelances</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    
+    <style>
+        body {
+            background-image: linear-gradient(to bottom, #6c5ce7 0%, #ffffff 100%);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #6c5ce7;
+            padding: 1em;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        header h1 {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 24px;
+            margin: 0;
+            letter-spacing: -1px; /* Reduzindo o espaçamento entre as letras */
+        }
+
+        header h1 span {
+            display: inline-block;
+            opacity: 0; /* Começa invisível */
+        }
+
+        header h1 span:nth-child(odd) {
+            animation-direction: alternate;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .header-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 1em;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .header-buttons button {
+            background-color: #6c5ce7;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-left: 10px;
+        }
+
+        .header-buttons button:hover {
+            background-color: #4b3f8c;
+        }
+
+        .header-buttons .access-community {
+            margin-right: 10px;
+        }
+
+        .header-icon {
+            height: 40px;
+            position: absolute;
+            left: 1em;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2em;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 2em;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+
+        section:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #6c5ce7;
+        }
+
+        .service-box {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            transition: box-shadow 0.3s;
+        }
+
+        .service-box:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-box i {
+            color: #6c5ce7;
+            margin-bottom: 10px;
+        }
+
+        .service-box h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .service-box p {
+            margin-bottom: 20px;
+        }
+
+        .service-box button {
+            background-color: #6c5ce7;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .service-box button:hover {
+            background-color: #4b3f8c;
+        }
+
+        .info {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .service-info {
+            background-color: #fff;
+            padding: 2em;
+            margin: 10px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+
+        .service-info:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-info .service-box {
+            display: inline-block;
+            width: calc(100% / 3 - 40px);
+            margin: 10px;
+            transition: box-shadow 0.3s;
+        }
+
+        .service-info .service-box:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: #6c5ce7;
+            padding: 1em;
+            text-align: center;
+            color: #fff;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ccc;
+        }
+
+        /* Adicionando a classe 'fade-in-up' para as caixas */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .fade-in-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Adicionando a classe 'floating' para as caixas */
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Adicionando a classe 'highlight' para realçar as caixas */
+        .highlight {
+            box-shadow: 0 0 20px rgba(108, 92, 231, 0.6);
+        }
+
+         #about-us {
+            background-color: #fff;
+            padding: 2em;
+            margin: 10px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px; /* Igual à seção de serviços */
+            width: 100%; /* Adicionado para garantir a largura total quando max-width não for aplicado */
+            text-align: center;
+            transition: box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #about-us:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        #about-us p {
+            margin: 1em 0;
+            line-height: 1.5;
+        }
+    </style>
 </head>
 <body>
-<header>
-    <h1>Seu Nome</h1>
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Downloads</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <div id="posts-container">
-        <article class="post">
-            <h2>Titulo do Artigo</h2>
-            <p class="date">Data da Postagem</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor urna ac justo ultrices, nec malesuada orci luctus. Integer commodo efficitur eros.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor urna ac justo ultrices, nec malesuada orci luctus. Integer commodo efficitur eros.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor urna ac justo ultrices, nec malesuada orci luctus. Integer commodo efficitur eros.</p>
-            <a href="#" class="download-btn">Download</a>
-        </article>
-        <!-- Adicione mais artigos aqui -->
-    </div>
-    <button id="load-more-btn">Ver Mais</button>
-</main>
-<footer>
-    <div class="footer-content">
-        <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
-        <div class="social-links">
-            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
-            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
-            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+    <header>
+        <h1>
+            <span>F</span>
+            <span>r</span>
+            <span>e</span>
+            <span>e</span>
+            <span>l</span>
+            <span>a</span>
+            <span> </span>
+            <span>S</span>
+            <span>e</span>
+            <span>l</span>
+            <span>l</span>
+            <span>'</span>
+            <span>s</span>
+        </h1>
+        <img src="./OIG4.png" alt="Ícone" class="header-icon">
+        <div class="header-buttons">
+            <button class="access-community" onclick="window.location.href = './discord.html';">Acessar Servidor</button>
+            <button class="terms" onclick="window.location.href = './termos.html';">Termos</button>
+        </div>
+    </header>
+    <main>
+        <section id="design" class="fade-in-up floating">
+            <h2>Design</h2>
+            <div class="service-box">
+                <i class="fas fa-paint-brush fa-3x"></i>
+                <h3>Crie seu visual</h3>
+                <p>Nossa equipe de designers criará um visual único e atraente para sua marca.</p>
+                <button onclick="scrollToAndHighlight('info-design')">Saiba mais</button>
+            </div>
+        </section>
+        <section id="programacao" class="fade-in-up floating">
+            <h2>Programação</h2>
+            <div class="service-box">
+                <i class="fas fa-code fa-3x"></i>
+                <h3>Desenvolva seu projeto</h3>
+                <p>Nossa equipe de programadores desenvolverá seu projeto com a mais alta qualidade.</p>
+                <button onclick="scrollToAndHighlight('info-programacao')">Saiba mais</button>
+            </div>
+        </section>
+        <section id="otimizacao" class="fade-in-up floating">
+            <h2>Otimização de PC</h2>
+            <div class="service-box">
+                <i class="fas fa-laptop fa-3x"></i>
+                <h3>Aumente a performance</h3>
+                <p>Nossa equipe de especialistas otimizará seu computador para que você possa trabalhar mais rápido.</p>
+                <button onclick="scrollToAndHighlight('info-otimizacao')">Saiba mais</button>
+            </div>
+        </section>
+    </main>
+    <div class="service-info">
+        <h2>Serviços</h2>
+        <div class="service-box" id="info-design" class="fade-in-up floating">
+            <h3>Design Gráfico</h3>
+            <p>Fornecemos serviços de design gráfico de alta qualidade com designers responsáveis e dedicados que fornecem um trabalho profissional e excepcional.</p>
+        </div>
+        <div class="service-box" id="info-programacao" class="fade-in-up floating">
+            <h3>Programação</h3>
+            <p>Quer criar um programa ou qualquer ferramenta na internet mas não sabe programar? Essa é sua solução! Contrate um programador freelancer para te ajudar com seu projeto!</p>
+        </div>
+        <div class="service-box" id="info-otimizacao" class="fade-in-up floating">
+            <h3>Otimização</h3>
+            <p>Sofre com um computador lento e quer otimiza-lo ou deseja criar programas de otimização para postar no seu  canal? Aqui você pode! Fornecemos tudo o que você precisa!</p>
         </div>
     </div>
-</footer>
-<script src="scripts.js"></script>
+    <section id="about-us" class="fade-in-up">
+    <h2>Sobre nós</h2>
+    <p>
+        Somos a Freela Sell's, uma plataforma dedicada a conectar profissionais freelancers com clientes que necessitam de serviços de design, programação e otimização de PC. Nossa equipe é composta por profissionais altamente qualificados e comprometidos em fornecer resultados excepcionais.
+    </p>
+    <p>
+        Nossa missão é oferecer soluções personalizadas e inovadoras que atendam às necessidades únicas de cada cliente. Trabalhamos com paixão e dedicação para garantir que cada projeto seja concluído com êxito e satisfação total.
+    </p>
+</section>
+    <footer>
+        <p>&copy; 2024 Freela Sell's - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const fadeInUpElements = document.querySelectorAll('.fade-in-up');
+
+        function showElement(element, delay) {
+            setTimeout(() => {
+                element.classList.add('show');
+            }, delay);
+        }
+
+        fadeInUpElements.forEach((element, index) => {
+            showElement(element, index * 150);
+        });
+
+        function scrollToAndHighlight(targetId) {
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                const serviceBoxes = document.querySelectorAll('.service-box');
+                serviceBoxes.forEach((box) => box.classList.remove('highlight'));
+                targetElement.classList.add('highlight');
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    </script>
+    <script>
+        // Obtém todas as letras do cabeçalho
+        const headerLetters = document.querySelectorAll('header h1 span');
+
+        // Define a função para animar as letras
+        function animateLetters(index) {
+            // Se todas as letras já foram animadas, interrompa a função
+            if (index >= headerLetters.length) return;
+            // Anima a letra atual
+            headerLetters[index].style.opacity = 1;
+            headerLetters[index].style.animation = 'wave 0.5s ease-in-out alternate';
+            // Chama recursivamente para a próxima letra após um pequeno atraso
+            setTimeout(() => {
+                animateLetters(index + 1);
+            }, 100); // Ajuste o atraso conforme necessário
+        }
+
+        // Inicia a animação chamando a função com o índice inicial 0
+        animateLetters(0);
+    </script>
 </body>
 </html>
