@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./OIG4.png" type="image/x-icon">
+    <meta property="og:title" content="FreelaSell's - Política de Privacidade">
+    <meta property="og:description" content="Conheça nossa Política de Privacidade e saiba como cuidamos da sua privacidade e segurança.">
+    <meta property="og:image" content="https://freelasells.shop/OIG4.png">
+    <meta property="og:type" content="website">
+    <title>Freela Sell's - Política de Privacidade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <style>
+        body {
+            background-image: linear-gradient(to bottom, #6c5ce7 0%, #ffffff 100%);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #6c5ce7;
+            padding: 1em;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        header h1 {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 24px;
+            margin: 0;
+            letter-spacing: -1px; /* Reduzindo o espaçamento entre as letras */
+        }
+
+        header h1 span {
+            display: inline-block;
+            opacity: 0; /* Começa invisível */
+        }
+
+        header h1 span:nth-child(odd) {
+            animation-direction: alternate;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .header-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 1em;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .header-buttons button {
+            background-color: #6c5ce7;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-left: 10px;
+        }
+
+        .header-buttons button:hover {
+            background-color: #4b3f8c;
+        }
+
+        .header-buttons .access-community {
+            margin-right: 10px;
+        }
+
+        .header-icon {
+            height: 40px;
+            position: absolute;
+            left: 1em;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2em;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 2em;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+
+        section:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #6c5ce7;
+        }
+
+        .service-box {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            transition: box-shadow 0.3s;
+        }
+
+        .service-box:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-box i {
+            color: #6c5ce7;
+            margin-bottom: 10px;
+        }
+
+        .service-box h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .service-box p {
+            margin-bottom: 20px;
+        }
+
+        .service-box button {
+            background-color: #6c5ce7;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .service-box button:hover {
+            background-color: #4b3f8c;
+        }
+
+        .info {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .service-info {
+            background-color: #fff;
+            padding: 2em;
+            margin: 10px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+
+        .service-info:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-info .service-box {
+            display: inline-block;
+            width: calc(100% / 3 - 40px);
+            margin: 10px;
+            transition: box-shadow 0.3s;
+        }
+
+        .service-info .service-box:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: #6c5ce7;
+            padding: 1em;
+            text-align: center;
+            color: #fff;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ccc;
+        }
+
+        /* Adicionando a classe 'fade-in-up' para as caixas */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .fade-in-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Adicionando a classe 'floating' para as caixas */
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Adicionando a classe 'highlight' para realçar as caixas */
+        .highlight {
+            box-shadow: 0 0 20px rgba(108, 92, 231, 0.6);
+        }
+
+         #about-us {
+            background-color: #fff;
+            padding: 2em;
+            margin: 10px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px; /* Igual à seção de serviços */
+            width: 100%; /* Adicionado para garantir a largura total quando max-width não for aplicado */
+            text-align: center;
+            transition: box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #about-us:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        #about-us p {
+            margin: 1em 0;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <span>F</span>
+            <span>r</span>
+            <span>e</span>
+            <span>e</span>
+            <span>l</span>
+            <span>a</span>
+            <span> </span>
+            <span>S</span>
+            <span>e</span>
+            <span>l</span>
+            <span>l</span>
+            <span>'</span>
+            <span>s</span>
+        </h1>
+        <img src="./OIG4.png" alt="Ícone" class="header-icon">
+        <div class="header-buttons">
+            <button class="access-community" onclick="window.location.href = './discord';">Acessar Servidor</button>
+            <button class="terms" onclick="window.location.href = './termos';">Termos</button>
+        </div>
+    </header>
+    <main>
+        <section id="privacy-policy">
+            <h2>Política de Privacidade</h2>
+            <p>A Freela Sell's se preocupa com a privacidade e segurança dos dados pessoais dos nossos usuários. Esta Política de Privacidade tem como objetivo informar como coletamos, utilizamos, compartilhamos e protegemos os dados pessoais que você nos fornece ao utilizar nossos serviços.</p>
+            <h3>1. Coleta de Dados Pessoais</h3>
+            <p>Podemos coletar os seguintes dados pessoais:</p>
+            <ul>
+                <li>Informações de contato, como nome, endereço de e-mail, telefone e endereço;</li>
+                <li>Informações de localização;</li>
+                <li>Informações sobre o sistema operacional e outras variáveis técnicas do dispositivo utilizado para acessar nossos serviços.</li>
+            </ul>
+            <h3>2. Uso dos Dados Pessoais</h3>
+            <p>Utilizamos os dados pessoais coletados para:</p>
+            <ul>
+                <li>Prestar e melhorar nossos serviços;</li>
+                <li>Enviar comunicações, incluindo e-mails, mensagens e notificações relacionadas aos nossos serviços;</li>
+                <li>Personalizar e otimizar a experiência do usuário;</li>
+                <li>Garantir a segurança dos nossos serviços e prevenir fraudes;</li>
+                <li>Cumprir obrigações legais e regulatórias.</li>
+            </ul>
+            <h3>3. Compartilhamento de Dados Pessoais</h3>
+            <p>Podemos compartilhar os dados pessoais coletados com:</p>
+            <ul>
+                <li>Prestadores de serviços que nos auxiliam na prestação dos nossos serviços, desde que esses prestadores de serviços estejam comprometidos com a proteção dos dados pessoais;</li>
+                <li>Autoridades competentes, quando exigido por lei ou para a proteção de nossos direitos e interesses legítimos.</li>
+            </ul>
+            <h3>4. Proteção de Dados Pessoais</h3>
+            <p>Adotamos medidas técnicas e organizacionais adequadas para proteger os dados pessoais contra acesso não autorizado ou ilegal e contra perda acidental, destruição ou danos. No entanto, nenhuma transmissão de dados pela internet é completamente segura e, portanto, não podemos garantir a segurança absoluta dos dados pessoais.</p>
+            <h3>5. Alterações na Política de Privacidade</h3>
+            <p>Podemos atualizar esta Política de Privacidade a qualquer momento. Recomendamos que você revise esta página periodicamente para ficar informado sobre quaisquer alterações.</p>
+            <h3>6. Contato</h3>
+            <p>Se você tiver alguma dúvida ou preocupação sobre nossa Política de Privacidade, entre em contato conosco através do endereço de e-mail [insira o endereço de e-mail de contato].</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Freela Sell's - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const fadeInUpElements = document.querySelectorAll('.fade-in-up');
+
+        function showElement(element, delay) {
+            setTimeout(() => {
+                element.classList.add('show');
+            }, delay);
+        }
+
+        fadeInUpElements.forEach((element, index) => {
+            showElement(element, index * 150);
+        });
+
+        function scrollToAndHighlight(targetId) {
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                const serviceBoxes = document.querySelectorAll('.service-box');
+                serviceBoxes.forEach((box) => box.classList.remove('highlight'));
+                targetElement.classList.add('highlight');
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    </script>
+    <script>
+        // Obtém todas as letras do cabeçalho
+        const headerLetters = document.querySelectorAll('header h1 span');
+
+        // Define a função para animar as letras
+        function animateLetters(index) {
+            // Se todas as letras já foram animadas, interrompa a função
+            if (index >= headerLetters.length) return;
+            // Anima a letra atual
+            headerLetters[index].style.opacity = 1;
+            headerLetters[index].style.animation = 'wave 0.5s ease-in-out alternate';
+            // Chama recursivamente para a próxima letra após um pequeno atraso
+            setTimeout(() => {
+                animateLetters(index + 1);
+            }, 100); // Ajuste o atraso conforme necessário
+        }
+
+        // Inicia a animação chamando a função com o índice inicial 0
+        animateLetters(0);
+    </script>
+</body>
+</html>
